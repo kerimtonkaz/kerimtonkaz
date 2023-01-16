@@ -3,7 +3,7 @@
 ```javascript
 class KerimTONKAZ {
   pronouns = "He" || "Him";
-  skills = ["PHP", "Javascript", "Git", "Linux", "Databases", "REST APIs"];
+  skills = ["PHP", "Javascript", "C#", "VB", "Git", "Linux", "Databases", "REST APIs"];
   constructor(currentlyLearning) {
     this.skills.push(currentlyLearning);
   }
