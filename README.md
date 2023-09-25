@@ -13,8 +13,66 @@
 </div>
 
 # 💫 About Me:
-🔭 I’m currently working on<br>👯 I’m looking to collaborate on<br>🤝 I’m looking for help with<br>🌱 I’m currently learning<br>💬 Ask me about<br>⚡ Fun fact
+```html
+<template>
+  <div>
+    <h1>Hello! I'm {{ name }}.</h1>
+    <p>You can also call me {{ pronouns }}.</p>
+    <p>Currently, I'm learning {{ currentlyLearning }}.</p>
 
+    <h2>My Skills:</h2>
+    <ul>
+      <li v-for="skill in skills" :key="skill">{{ skill }}</li>
+    </ul>
+    <button @click="learnNewSkill('Nuxt.js')">Learn Nuxt.js</button>
+  </div>
+</template>
+
+<script>
+```
+```javascript
+import { ref } from '@nuxtjs/composition-api';
+
+export default {
+  setup() {
+    const name = ref('Kerim');
+    const pronouns = ref('He' || 'Him');
+    const currentlyLearning = ref('Nuxt.js');
+
+    const skills = ref([
+      'PHP',
+      'JavaScript',
+      'C#',
+      'VB',
+      'Git',
+      'Linux',
+      'Databases',
+      'REST APIs',
+    ]);
+
+    const introduce = () => {
+      alert(`Hello! I'm ${name.value}. You can also call me ${pronouns.value}.`);
+    };
+
+    const learnNewSkill = (newSkill) => {
+      skills.value.push(newSkill);
+      alert(`I'm now learning ${newSkill}!`);
+    };
+
+    return {
+      name,
+      pronouns,
+      currentlyLearning,
+      skills,
+      introduce,
+      learnNewSkill,
+    };
+  },
+};
+```
+```html
+</script>
+```
 
 ## 🌐 Socials:
 [![Discord](https://img.shields.io/badge/Discord-%237289DA.svg?logo=discord&logoColor=white)](https://discord.gg/https://discord.gg/fgvQZuDeuw) [![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://instagram.com/sosyopatyazilimci) [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/kerimtonkaz) [![Twitch](https://img.shields.io/badge/Twitch-%239146FF.svg?logo=Twitch&logoColor=white)](https://twitch.tv/sosyopatyazilimci) [![Twitter](https://img.shields.io/badge/Twitter-%231DA1F2.svg?logo=Twitter&logoColor=white)](https://twitter.com/kerimtonkaz) [![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?logo=YouTube&logoColor=white)](https://youtube.com/@KerimTonkaz) 
